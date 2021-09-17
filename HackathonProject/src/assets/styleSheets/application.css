@@ -6,11 +6,6 @@ BorderPane {
 	-fx-background-color: blue;
 }
 
-Text {
-	-fx-font-size: 18px;
-	-fx-text-fill: #fff;
-}
-
 .btn {
 	-fx-pref-width: 150px;
 	-fx-pref-height: 50px;
@@ -21,7 +16,8 @@ Text {
 	-fx-font-size: 25px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn-back:hover {
 	-fx-background-color: #fff;
 	-fx-text-fill: blue;
 }
@@ -29,4 +25,9 @@ Text {
 .rbtn {
 	-fx-font-size: 18px;
 	-fx-text-fill: #fff;
+}
+
+.btn-back {
+	-fx-background-color: #6866f2;
+	-fx-font-size: 15px;
 }
