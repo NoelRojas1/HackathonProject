@@ -12,9 +12,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../views/Main.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Grounded");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
