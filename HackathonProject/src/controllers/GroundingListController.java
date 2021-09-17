@@ -91,10 +91,43 @@ public class GroundingListController {
 		return categories;
 	}
 	
+	private String mentalExercises(int num) {
+		String exercise = "";
+		
+		switch(num) {
+			case 0: exercise = "Name all the objects you see.";
+				break;
+			case 1: exercise = "Describe the steps in performing an activity you know how to do well. For example, \r\n"
+					+ "how to shoot a basketball, prepare your favorite meal, or tie a knot.";
+				break;
+			case 2: exercise = "Count backwards from 100 by 7.";
+				break;
+			case 3: exercise = "Pick up an object and describe it in detail. Describe its color, texture, size, weight, \r\n"
+					+ "scent, and any other qualities you notice.";
+				break;
+			case 4: exercise = "Spell your full name, and the names of three other people, backwards";
+				break;
+			case 5: exercise = "Name all your family members, their ages, and one of their favorite activities";
+				break;
+			case 6: exercise = "Read something backwards, letter-by-letter. Practice for at least a few minutes";
+				break;
+			case 7: exercise = "Think of an object and \"draw\" it in your mind, or in the air with your finger. Try drawing \r\n"
+					+ "your home, a vehicle, or an animal. ";
+				break;
+		}
+		return exercise;
+	}
+	
 	//Helper method(s)
-	private int randomNumberOnetoEleven() {
+	private int randomNumberZerptoEleven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((11 + 1));
+		
+		return randNum;
+	}
+	private int randomNumberZerotoSeven() {
+		Random rand = new Random();
+		int randNum = rand.nextInt((7 + 1));
 		
 		return randNum;
 	}
