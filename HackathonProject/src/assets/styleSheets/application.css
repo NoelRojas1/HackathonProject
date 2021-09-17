@@ -31,3 +31,7 @@ BorderPane {
 	-fx-background-color: #6866f2;
 	-fx-font-size: 15px;
 }
+
+HBox {
+	-fx-background-color: red;
+}

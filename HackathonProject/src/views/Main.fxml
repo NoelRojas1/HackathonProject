@@ -23,13 +23,13 @@
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-pane" BorderPane.alignment="CENTER">
-      	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="Option 1">
+      	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="Grounding">
            <toggleGroup>
               <ToggleGroup fx:id="options" />
            </toggleGroup>
 		</RadioButton>
-		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Option 2" toggleGroup="$options" />
-		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Option 3" toggleGroup="$options" />
+		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Articles" toggleGroup="$options" />
+		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Breathing" toggleGroup="$options" />
 		<RadioButton layoutX="466.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Option 4" toggleGroup="$options" />
 		<RadioButton layoutX="466.0" layoutY="214.0" mnemonicParsing="false" styleClass="rbtn" text="Option 5" toggleGroup="$options" />
 		<RadioButton layoutX="466.0" layoutY="245.0" mnemonicParsing="false" styleClass="rbtn" text="Option 6" toggleGroup="$options" />
