@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
@@ -26,7 +29,6 @@ public class MainController {
     @FXML private Text appName;
     @FXML private ToggleGroup options;
     @FXML private Button btnStart, btnRandom;
-    @FXML private HBox articlesHbox;
 
     @FXML
     void startProgram(ActionEvent event) {
@@ -60,13 +62,15 @@ public class MainController {
     		final String[] captions = new String[] {
     			"Google",
     			"YouTube",
-    			"Twitter"
+    			"Twitter",
+    			"Phone"
     		};
     		
     		final String[] urls = new String[] {
     			"https://www.google.com",
     			"https://www.youtube.com",
-    			"https://www.twitter.com"
+    			"https://www.twitter.com",
+    			"https://www.msn.com/en-us/news/politics/f-d-a-vaccine-panel-meeting-on-pfizer-booster-shots/ar-AAOxz5y?ocid=msedgntp"
     		};
     		
     		final Hyperlink[] hpls = new Hyperlink[captions.length];
@@ -90,10 +94,15 @@ public class MainController {
 					});
 				}
 				
-				articlesHbox.getChildren().addAll(hpls);
+				ObservableList<Node> children = center.getChildren();
+				System.out.println(children);
+				VBox vbox = (VBox)children.get(0);
+				ObservableList<Node> vChildren = vbox.getChildren();
+				HBox hbox = (HBox)vChildren.get(0);
+				hbox.getChildren().addAll(hpls);
 				
-				//Set the center of the border pane depending on the type of options chosen
-				center.getChildren().addAll(browser);
+				vbox.getChildren().addAll(browser);
+				
 				root.setCenter(center);
 				Scene scene = new Scene(root);
 				scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
