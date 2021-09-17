@@ -49,6 +49,10 @@ public class MainController {
     		fxmlFile = "../views/breathing.fxml";
     		changeScreen(event, fxmlFile, "Breathing Techniques");
     		break;
+    	case "Music":
+    		fxmlFile = "../views/music.fxml";
+    		changeScreen(event, fxmlFile, "Music Player");
+    		break;
     	}
     }
 
