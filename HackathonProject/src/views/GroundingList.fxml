@@ -7,16 +7,16 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="center-pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GroundingListController">
-	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="5-4-3-2-1">
+	<RadioButton layoutX="600.0" layoutY="125.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="5-4-3-2-1">
            <toggleGroup>
               <ToggleGroup fx:id="grounding" />
            </toggleGroup>
 		</RadioButton>
-		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Categories" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Awereness" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Mental Health" toggleGroup="$grounding" />
+		<RadioButton layoutX="600.0" layoutY="155.0" mnemonicParsing="false" styleClass="rbtn" text="Categories" toggleGroup="$grounding" />
+		<RadioButton layoutX="600.0" layoutY="185.0" mnemonicParsing="false" styleClass="rbtn" text="Awereness" toggleGroup="$grounding" />
+		<RadioButton layoutX="600.0" layoutY="215.0" mnemonicParsing="false" styleClass="rbtn" text="Mental Health" toggleGroup="$grounding" />
 		
-		<Button fx:id="groundingSelection" layoutX="460.0" layoutY="300.0" mnemonicParsing="false" onAction="#startGrounding" prefHeight="51.0" prefWidth="167.0" styleClass="btn" text="GO">
+		<Button fx:id="groundingSelection" layoutX="460.0" layoutY="250.0" mnemonicParsing="false" onAction="#startGrounding" styleClass="btn" text="GO">
             <font>
                <Font size="24.0" />
             </font>
