@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -26,25 +28,25 @@ public class GroundingListController {
         String fxmlFile = "";
         
         switch(selection) {
-        case "5-4-3-2-1":
-            fxmlFile = "../views/fiveToOneTechnique.fxml";
-            changeScreen(event, fxmlFile, "One - Five");
-            break;
-        case "Categories":
-            break;
-        case "Awareness":
-            break;
-        case "Mental Health":
-            break;
+	        case "5-4-3-2-1":
+	            fxmlFile = "../views/fiveToOneTechnique.fxml";
+	            changeScreen(event, fxmlFile, "5-4-3-2-1");
+	            break;
+	        case "Categories":
+	        	fxmlFile = "../views/categoriesTechnique.fxml";
+	            changeScreen(event, fxmlFile, "Categories");
+	            break;
+	        case "Awareness":
+	        	fxmlFile = "../views/awerenessTechnique.fxml";
+	            changeScreen(event, fxmlFile, "Awareness");
+	            break;
+	        case "Mental Health":
+	        	fxmlFile = "../views/mentalExerciseTechnique.fxml";
+	            changeScreen(event, fxmlFile, "Mental Exercise");
+	            break;
         }
     }
 	
-	public static void main(String [] args) {
-    	//System.out.println(fiveToOne());
-    	//System.out.println(categories(randomNumberZeroToEleven()));
-    	//System.out.println(mentalExercises(randomNumberZeroToSeven()));
-    	//System.out.println(awareness(randomNumberZeroToSeven()));
-    }
 	
 	@FXML 
 	void goBack(ActionEvent event) {
@@ -67,12 +69,37 @@ public class GroundingListController {
 	
 	@FXML
     void btnBack(ActionEvent event) {
+		try {
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../views/Main.fxml"));
+            //Load the view for the type of options chosen
+            AnchorPane center = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/GroundingList.fxml"));
+            //Set the center of the border pane depending on the type of options chosen
+            root.setCenter(center);
+            Scene scene = new Scene(root);
 
+            scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+
+            primaryStage.setTitle("Groudning List");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch(IOException e) {
+            System.out.println(e.toString());
+        }
     }
 
     @FXML
     void btnNext(ActionEvent event) {
-
+//    	String title = "";
+//    	if(title.contains("Categories")) {
+//         	txt.setText(categories(randomNumberZeroToEleven()));
+//     	}
+//         else if(title.contains("Awareness")) {
+//         	txt.setText(awareness(randomNumberZeroToSeven()));
+//     	}
+//         else if(title.contains("Mental Exercise")) {
+//         	txt.setText(mentalExercises(randomNumberZeroToSeven()));
+//     	}
     }
     
     void changeScreen(ActionEvent event, String fxmlFile, String title) {
@@ -87,13 +114,27 @@ public class GroundingListController {
             scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
             primaryStage.setTitle(title);
             primaryStage.setScene(scene);
+            ObservableList <Node> children = center.getChildren();
+            TextArea txt = (TextArea) children.get(0);
+            if(title.contains("5-4-3-2-1")) {
+            	txt.setText(fiveToOne());
+        	}
+            else if(title.contains("Categories")) {
+            	txt.setText(categories(randomNumberZeroToEleven()));
+        	}
+            else if(title.contains("Awareness")) {
+            	txt.setText(awareness(randomNumberZeroToSeven()));
+        	}
+            else if(title.contains("Mental Exercise")) {
+            	txt.setText(mentalExercises(randomNumberZeroToSeven()));
+        	}
             primaryStage.show();
         } catch(IOException e) {
             System.out.println(e.toString());
         }
     }
 	
-	private static String fiveToOne() {
+	private String fiveToOne() {
 		String fiveToOne = "What are 5 things you can see? Look for small details such as a pattern on the \r\n"
 				+ "ceiling, the way light reflects off a surface, or an object you never noticed.\r\n"
 				+ "What are 4 things you can feel? Notice the sensation of clothing on your body, the \r\n"
@@ -106,11 +147,10 @@ public class GroundingListController {
 				+ "that has a scent, such as a flower or an unlit candle.\r\n"
 				+ "What is 1 thing you can taste? Carry gum, candy, or small snacks for this step. Pop \r\n"
 				+ "one in your mouth and focus your attention closely on the flavors.";
-		
 		return fiveToOne;
 	}
 	
-	private static String categories(int num) {
+	private String categories(int num) {
 		String category = "";
 		switch(num) {
 			case 0: category = "Movies";
@@ -142,7 +182,7 @@ public class GroundingListController {
 		return categories;
 	}
 	
-	private static String mentalExercises(int num) {
+	private String mentalExercises(int num) {
 		String exercise = "";
 		
 		switch(num) {
@@ -169,7 +209,7 @@ public class GroundingListController {
 		return exercise;
 	}
 	
-	private static String awareness(int num) {
+	private String awareness(int num) {
 		String activity = "";
 		
 		switch(num) {
@@ -199,13 +239,13 @@ public class GroundingListController {
 	
 	
 	//Helper method(s)
-	private static int randomNumberZeroToEleven() {
+	private int randomNumberZeroToEleven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((11 + 1));
 		
 		return randNum;
 	}
-	private static int randomNumberZeroToSeven() {
+	private int randomNumberZeroToSeven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((7 + 1));
 		
