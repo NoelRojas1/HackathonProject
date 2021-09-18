@@ -15,9 +15,36 @@ import javafx.stage.Stage;
 import java.util.Random;
 
 public class GroundingListController {
-	
+    
     @FXML private ToggleGroup grounding;
     @FXML private Button groundingSelection;
+    
+    @FXML
+    void startGrounding(ActionEvent event) {
+        RadioButton rb = (RadioButton)grounding.getSelectedToggle();
+        String selection = rb.getText();
+        String fxmlFile = "";
+        
+        switch(selection) {
+        case "5-4-3-2-1":
+            fxmlFile = "../views/fiveToOneTechnique.fxml";
+            changeScreen(event, fxmlFile, "One - Five");
+            break;
+        case "Categories":
+            break;
+        case "Awareness":
+            break;
+        case "Mental Health":
+            break;
+        }
+    }
+	
+	public static void main(String [] args) {
+    	//System.out.println(fiveToOne());
+    	//System.out.println(categories(randomNumberZeroToEleven()));
+    	//System.out.println(mentalExercises(randomNumberZeroToSeven()));
+    	//System.out.println(awareness(randomNumberZeroToSeven()));
+    }
 	
 	@FXML 
 	void goBack(ActionEvent event) {
@@ -37,6 +64,34 @@ public class GroundingListController {
 			System.out.println(e.toString());
 		}
 	}
+	
+	@FXML
+    void btnBack(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnNext(ActionEvent event) {
+
+    }
+    
+    void changeScreen(ActionEvent event, String fxmlFile, String title) {
+        try {
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../views/Main.fxml"));
+            //Load the view for the type of technique chosen
+            AnchorPane center = (AnchorPane)FXMLLoader.load(getClass().getResource(fxmlFile));
+            //Set the center of the border pane depending on the type of technique chosen
+            root.setCenter(center);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+            primaryStage.setTitle(title);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch(IOException e) {
+            System.out.println(e.toString());
+        }
+    }
 	
 	private static String fiveToOne() {
 		String fiveToOne = "What are 5 things you can see? Look for small details such as a pattern on the \r\n"
