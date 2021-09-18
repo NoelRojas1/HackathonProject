@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -17,18 +18,6 @@ public class GroundingListController {
 	
     @FXML private ToggleGroup grounding;
     @FXML private Button groundingSelection;
-	
-    public static void main(String [] args) {
-    	//System.out.println(fiveToOne());
-    	//System.out.println(categories(randomNumberZeroToEleven()));
-    	//System.out.println(mentalExercises(randomNumberZeroToSeven()));
-    	//System.out.println(awareness(randomNumberZeroToSeven()));
-    }
-    
-	@FXML
-	void startGrounding(ActionEvent event) {
-		
-	}
 	
 	@FXML 
 	void goBack(ActionEvent event) {
