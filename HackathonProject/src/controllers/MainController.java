@@ -51,16 +51,25 @@ public class MainController {
     		fxmlFile = "../views/music.fxml";
     		changeScreen(event, fxmlFile, "Music Player");
     		break;
+    	case "Places To Go":
+    		fxmlFile = "../views/placesToGo.fxml";
+    		changeScreen(event, fxmlFile, "Places To Go");
+    		break;
+    	case "Chat with a Doctor":
+    		fxmlFile = "../views/chat.fxml";
+    		changeScreen(event, fxmlFile, "Chat");
     	}
     }
 
     @FXML
     void startProgramRandom(ActionEvent event) {
     	String[] options = new String[] {
-    		"Grounded",
+    		"Grounding",
     		"Articles",
     		"Breathing",
-    		"Music"
+    		"Music",
+    		"Places To Go",
+    		"Chat with a Doctor"
     	};
     	
     	int rand = (int)(Math.random() * options.length);
@@ -70,7 +79,7 @@ public class MainController {
     	String fxmlFile = "";
     	
     	switch(chosen) {
-    	case "Grounded":
+    	case "Grounding":
     		fxmlFile = "../views/GroundingList.fxml";
     		changeScreen(event, fxmlFile, "Grounding List");
     		break;
@@ -86,6 +95,13 @@ public class MainController {
     		fxmlFile = "../views/music.fxml";
     		changeScreen(event, fxmlFile, "Music Player");
     		break;
+    	case "Places To Go":
+    		fxmlFile = "../views/placesToGo.fxml";
+    		changeScreen(event, fxmlFile, "Places To Go");
+    		break;
+    	case "Chat with a Doctor":
+    		fxmlFile = "../views/chat.fxml";
+//    		changeScreen(event, fxmlFile, "Chat");
     	}
     }
 
@@ -101,7 +117,7 @@ public class MainController {
 				 //Create a WebView and a WebEngine object
 				 final WebView browser = new WebView();
 				 final WebEngine webEngine = browser.getEngine();
-                 webEngine.load("https://www.youtube.com/watch?v=zPyg4N7bcHM&ab_channel=NEOTIC%22");
+                 webEngine.load("https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl");
 
                  //Get the children of the page to be loaded as center of the main border pane
  				 ObservableList<Node> children = center.getChildren();

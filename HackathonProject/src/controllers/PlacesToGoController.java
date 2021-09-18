@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class MusicController {
+public class PlacesToGoController {
 
 	@FXML 
 	void goBack(ActionEvent event) {
