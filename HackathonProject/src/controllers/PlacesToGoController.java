@@ -1,17 +1,55 @@
 package controllers;
 
-import java.io.IOException;
+import java.io.IOException;	
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class PlacesToGoController {
+	 
+	 @FXML private HBox placesHbox;
+	 
+	 @FXML private VBox placesVbox;
+	 
+	 @FXML private WebView webView;
+	 
+	 @FXML
+	 void placesParks(ActionEvent event) {
+		 WebEngine engine = webView.getEngine();
+		    engine.load("https://www.google.com/search?q=local+parks");
+	 }
+	 
+	 @FXML
+	 void placesTrails(ActionEvent event) {
+		 WebEngine engine = webView.getEngine();
+		    engine.load("https://www.google.com/search?q=local+trails");
+	 }
+	 
+	 @FXML
+	 void placesPsycologists(ActionEvent event) {
+		 WebEngine engine = webView.getEngine();
+		    engine.load("https://www.google.com/search?q=local+psychologist");
+	 }
+	 
+	 @FXML
+	 void placesCounselors(ActionEvent event) {
+		 WebEngine engine = webView.getEngine();
+		    engine.load("https://www.google.com/search?q=local+counselor");
+	 }
 
 	@FXML 
 	void goBack(ActionEvent event) {
