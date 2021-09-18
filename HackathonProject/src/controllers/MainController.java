@@ -140,21 +140,23 @@ public class MainController {
             }
         }
     	
-    	 if(title.contains("Article")) {
-    		//Create the arrays of captions and urls
-    		final String[] captions = new String[] {
-    			"Google",
-    			"YouTube",
-    			"Twitter",
-    			"Phone"
-    		};
-    		
-    		final String[] urls = new String[] {
-    			"https://www.google.com",
-    			"https://www.youtube.com",
-    			"https://www.twitter.com",
-    			"https://www.msn.com/en-us/news/politics/f-d-a-vaccine-panel-meeting-on-pfizer-booster-shots/ar-AAOxz5y?ocid=msedgntp"
-    		};
+    	if(title.contains("Article")) {
+            //Create the arrays of captions and urls
+            final String[] captions = new String[] {
+                "Panic Attack",
+                "Stop a Panic Attack",
+                "Living With Anxiety Pointers",
+                "10 Tips for Managing Anxiety",
+                "Tips to Manage Anxiety and Stress"
+            };
+
+            final String[] urls = new String[] {
+                "https://www.healthline.com/health/anxiety/panic-attack-self-care-strategies",
+                "https://www.healthline.com/health/how-to-stop-a-panic-attack#happy-place",
+                "https://www.webmd.com/anxiety-panic/anxiety-tips",
+                "https://www.therecoveryvillage.com/mental-health/anxiety/related/self-help-for-anxiety/",
+                "https://adaa.org/tips"
+            };
     		
     		//Create an array of Hyperlinks
     		final Hyperlink[] hpls = new Hyperlink[captions.length];
