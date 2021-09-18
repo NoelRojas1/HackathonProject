@@ -207,7 +207,12 @@ public class MainController {
 				//Set the center of the border pane depending on the type of options chosen
 				root.setCenter(center);
 				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+				
+				if(!title.contains("Breathing")) {
+					scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+				} else {
+					scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/breathing.css").toExternalForm());
+				}
 				primaryStage.setTitle(title);
 				primaryStage.setScene(scene);
 				primaryStage.show();
