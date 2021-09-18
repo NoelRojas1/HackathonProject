@@ -18,6 +18,12 @@ public class GroundingListController {
     @FXML private ToggleGroup grounding;
     @FXML private Button groundingSelection;
 	
+    public static void main(String [] args) {
+    	//System.out.println(fiveToOne());
+    	//System.out.println(categories(randomNumberZeroToEleven()));
+    	System.out.println(mentalExercises(randomNumberZeroToSeven()));
+    }
+    
 	@FXML
 	void startGrounding(ActionEvent event) {
 		
@@ -42,7 +48,7 @@ public class GroundingListController {
 		}
 	}
 	
-	private String FiveToOne() {
+	private static String fiveToOne() {
 		String fiveToOne = "What are 5 things you can see? Look for small details such as a pattern on the \r\n"
 				+ "ceiling, the way light reflects off a surface, or an object you never noticed.\r\n"
 				+ "What are 4 things you can feel? Notice the sensation of clothing on your body, the \r\n"
@@ -59,7 +65,7 @@ public class GroundingListController {
 		return fiveToOne;
 	}
 	
-	private String categories(int num) {
+	private static String categories(int num) {
 		String category = "";
 		switch(num) {
 			case 0: category = "Movies";
@@ -87,11 +93,11 @@ public class GroundingListController {
 			case 11: category = "Famous People";
 				break;
 		}
-		String categories = "Name as many " + category + " as you can think of in 1 minute.";
+		String categories = "Name as many " + category + " as you can think of in one minute.";
 		return categories;
 	}
 	
-	private String mentalExercises(int num) {
+	private static String mentalExercises(int num) {
 		String exercise = "";
 		
 		switch(num) {
@@ -119,13 +125,13 @@ public class GroundingListController {
 	}
 	
 	//Helper method(s)
-	private int randomNumberZeroToEleven() {
+	private static int randomNumberZeroToEleven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((11 + 1));
 		
 		return randNum;
 	}
-	private int randomNumberZeroToSeven() {
+	private static int randomNumberZeroToSeven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((7 + 1));
 		
