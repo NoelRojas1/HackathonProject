@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="center-pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="controllers.BreathingController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="center-pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BreathingController">
    <children>
       <TextField fx:id="txtBreathing" editable="false" layoutX="348.0" layoutY="98.0" prefHeight="65.0" prefWidth="316.0" styleClass="txt-breathing">
          <font>
@@ -14,5 +13,7 @@
          </font>
       </TextField>
       <Button layoutX="20.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="138.0" styleClass="btn-back" text="Go Back" />
+      <Button layoutX="451.0" layoutY="176.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="25.0" prefWidth="108.0" styleClass="btn" text="Start" />
+      <TextField fx:id="txtTime" layoutX="431.0" layoutY="216.0" />
    </children>
 </AnchorPane>
