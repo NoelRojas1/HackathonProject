@@ -40,3 +40,7 @@ Hyperlink {
 .navbar {
 	-fx-background-color: #E8D8D2;
 }
+
+.txt-msg {
+	-fx-border-color: #E8D8D2;
+}
