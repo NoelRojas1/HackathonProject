@@ -2,6 +2,8 @@ package controllers;
 
 import java.io.IOException;
 
+import app.LiveChat;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,8 +58,19 @@ public class MainController {
     		changeScreen(event, fxmlFile, "Places To Go");
     		break;
     	case "Chat with a Doctor":
-    		fxmlFile = "../views/chat.fxml";
-    		changeScreen(event, fxmlFile, "Chat");
+    		LiveChat liveChat = new LiveChat();
+    		LiveChat liveChat2 = new LiveChat();
+    		Platform.runLater(new Runnable() {
+    			public void run() {
+    				try {
+						liveChat.runChat("Server");
+						liveChat2.runChat("Client");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+    			}
+    		});
+    		break;
     	}
     }
 
@@ -68,8 +81,7 @@ public class MainController {
     		"Articles",
     		"Breathing",
     		"Music",
-    		"Places To Go",
-    		"Chat with a Doctor"
+    		"Places To Go"
     	};
     	
     	int rand = (int)(Math.random() * options.length);
@@ -147,7 +159,8 @@ public class MainController {
                 "Stop a Panic Attack",
                 "Living With Anxiety Pointers",
                 "10 Tips for Managing Anxiety",
-                "Tips to Manage Anxiety and Stress"
+                "Tips to Manage Anxiety and Stress",
+                "Panic Attacks and Panic Disorder"
             };
 
             final String[] urls = new String[] {
@@ -155,11 +168,13 @@ public class MainController {
                 "https://www.healthline.com/health/how-to-stop-a-panic-attack#happy-place",
                 "https://www.webmd.com/anxiety-panic/anxiety-tips",
                 "https://www.therecoveryvillage.com/mental-health/anxiety/related/self-help-for-anxiety/",
-                "https://adaa.org/tips"
+                "https://adaa.org/tips",
+                "https://www.mayoclinic.org/diseases-conditions/panic-attacks/diagnosis-treatment/drc-20376027"
             };
     		
     		//Create an array of Hyperlinks
-    		final Hyperlink[] hpls = new Hyperlink[captions.length];
+    		final Hyperlink[] hpls1 = new Hyperlink[captions.length/2];
+    		final Hyperlink[] hpls2 = new Hyperlink[captions.length/2];
     		
     		//Change the scene
     		try {
@@ -175,16 +190,23 @@ public class MainController {
 				
 				//Loop through the captions and create a hyperlink (hlp)
 				//Store the hlp in the hyperlinks (hpls) array initialized with captions[i]
-				for(int i = 0; i < captions.length; i++) {
-					final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+				for(int i = 0, j = 3; i < captions.length/2; i++, j++) {
+					final Hyperlink hpl = hpls1[i] = new Hyperlink(captions[i]);
+					final Hyperlink hlp2 = hpls2[i] = new Hyperlink(captions[j]);
 					hpl.setFont(Font.font("Arial", 14));
+					hlp2.setFont(Font.font("Arial", 14));
 					
 					//Create a url initialized with urls[i]
 					final String url = urls[i];
+					final String url2 = urls[i+1];
 					
 					//set an ActionEvent on each link to open a browser with the link 
 					hpl.setOnAction((ActionEvent e) -> {
 						webEngine.load(url);
+					});
+					
+					hlp2.setOnAction((ActionEvent e) -> {
+						webEngine.load(url2);
 					});
 				}
 				
@@ -197,10 +219,14 @@ public class MainController {
 				ObservableList<Node> vChildren = vbox.getChildren();
 				//Extract the HBox
 				HBox hbox = (HBox)vChildren.get(0);
+				HBox hbox2 = (HBox)vChildren.get(1);
 				
 				//Add the hyperlinks to the HBox
-				hbox.getChildren().addAll(hpls);
+				hbox.getChildren().addAll(hpls1);
 				hbox.setSpacing(25);
+				
+				hbox2.getChildren().addAll(hpls2);
+				hbox2.setSpacing(25);
 				
 				//Add the embedded browser to the VBox
 				vbox.getChildren().addAll(browser);
