@@ -13,7 +13,7 @@
          </font>
       </TextField>
       <Button layoutX="20.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="138.0" styleClass="btn-back" text="Go Back" />
-      <Button layoutX="451.0" layoutY="176.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="25.0" prefWidth="108.0" styleClass="btn" text="Start" />
-      <TextField fx:id="txtTime" layoutX="431.0" layoutY="216.0" />
+      <Button layoutX="430.0" layoutY="180.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="25.0" prefWidth="108.0" styleClass="btn" text="Start" />
+      <TextField fx:id="txtTime" prefHeight="65.0" prefWidth="316.0"  layoutX="348.0" layoutY="250.0" />
    </children>
 </AnchorPane>
