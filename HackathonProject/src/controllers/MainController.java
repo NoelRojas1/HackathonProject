@@ -56,11 +56,41 @@ public class MainController {
 
     @FXML
     void startProgramRandom(ActionEvent event) {
-
+    	String[] options = new String[] {
+    		"Grounded",
+    		"Articles",
+    		"Breathing",
+    		"Music"
+    	};
+    	
+    	int rand = (int)(Math.random() * options.length);
+    	System.out.println(rand);
+    	String chosen = options[rand];
+    	System.out.println(chosen);
+    	String fxmlFile = "";
+    	
+    	switch(chosen) {
+    	case "Grounded":
+    		fxmlFile = "../views/GroundingList.fxml";
+    		changeScreen(event, fxmlFile, "Grounding List");
+    		break;
+    	case "Articles":
+    		fxmlFile = "../views/articles.fxml";
+    		changeScreen(event, fxmlFile, "Article Links");
+    		break;
+    	case "Breathing":
+    		fxmlFile = "../views/breathing.fxml";
+    		changeScreen(event, fxmlFile, "Breathing Techniques");
+    		break;
+    	case "Music":
+    		fxmlFile = "../views/music.fxml";
+    		changeScreen(event, fxmlFile, "Music Player");
+    		break;
+    	}
     }
 
     void changeScreen(ActionEvent event, String fxmlFile, String title) {
-    	if(title.contains("Music Player")) {
+    	if(title.equals("Music Player")) {
             try {
             	 Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				 BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../views/Main.fxml"));
@@ -79,23 +109,22 @@ public class MainController {
  				 //Extract the VBox
  				 VBox vbox = (VBox)children.get(0);
 	             System.out.println(vbox);
- 				//Add the embedded browser to the VBox
- 				vbox.getChildren().addAll(browser);
+ 				 //Add the embedded browser to the VBox
+ 				 vbox.getChildren().addAll(browser);
  				
- 				//Set the "center" as center of the root (BorderPane).
- 				root.setCenter(center);
- 				Scene scene = new Scene(root);
- 				scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
- 				primaryStage.setTitle(title);
- 				primaryStage.setScene(scene);
- 				primaryStage.show();
-
+ 				 //Set the "center" as center of the root (BorderPane).
+ 				 root.setCenter(center);
+ 				 Scene scene = new Scene(root);
+ 				 scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+ 				 primaryStage.setTitle(title);
+ 				 primaryStage.setScene(scene);
+ 				 primaryStage.show();
             } catch(IOException e) {
                 System.out.println(e);
             }
         }
     	
-    	if(title.contains("Article")) {
+    	 if(title.contains("Article")) {
     		//Create the arrays of captions and urls
     		final String[] captions = new String[] {
     			"Google",
