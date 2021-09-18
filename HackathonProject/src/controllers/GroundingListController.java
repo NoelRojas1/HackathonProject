@@ -119,13 +119,13 @@ public class GroundingListController {
 	}
 	
 	//Helper method(s)
-	private int randomNumberZerptoEleven() {
+	private int randomNumberZeroToEleven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((11 + 1));
 		
 		return randNum;
 	}
-	private int randomNumberZerotoSeven() {
+	private int randomNumberZeroToSeven() {
 		Random rand = new Random();
 		int randNum = rand.nextInt((7 + 1));
 		
