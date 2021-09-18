@@ -117,7 +117,7 @@ public class MainController {
 				 //Create a WebView and a WebEngine object
 				 final WebView browser = new WebView();
 				 final WebEngine webEngine = browser.getEngine();
-                 webEngine.load("https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl");
+                 webEngine.load("https://www.youtube.com/watch?v=9wIwBWkmyes&list=OLAK5uy_n6K9Np1PQyIIZIDTx_6dlTrkOMb-Q3Jn0&index=1");
 
                  //Get the children of the page to be loaded as center of the main border pane
  				 ObservableList<Node> children = center.getChildren();
