@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="center-pane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PlacesToGoController">
+	<!-- TODO Add Nodes -->
+	 <Button layoutX="20.0" layoutY="550.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" styleClass="btn-back" onAction="#goBack" text="Go Back" />
+</AnchorPane>
+
