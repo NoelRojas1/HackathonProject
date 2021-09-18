@@ -9,7 +9,8 @@
    <children>
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="524.0" prefWidth="973.0">
          <children>
-            <HBox fx:id="articlesHbox" prefHeight="100.0" prefWidth="971.0" styleClass="navbar" />
+            <HBox alignment="CENTER" fx:id="articlesHbox" prefHeight="100.0" prefWidth="971.0" styleClass="navbar" />
+            <HBox alignment="CENTER" fx:id="articlesHbox2" prefHeight="100.0" prefWidth="971.0" styleClass="navbar" />
          </children>
       </VBox>
       <Button layoutX="20.0" layoutY="550.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="138.0" styleClass="btn-back" text="Go Back" />
