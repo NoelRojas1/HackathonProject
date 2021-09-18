@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 public class BreathingController {
 	
-    @FXML private TextField txtBreathing;
+    @FXML private TextField txtBreathing, txtTime;
 
 	@FXML 
 	void goBack(ActionEvent event) {
@@ -34,4 +34,9 @@ public class BreathingController {
 			System.out.println(e.toString());
 		}
 	}
+	
+    @FXML
+    void startTimer(ActionEvent event) {
+
+    }
 }

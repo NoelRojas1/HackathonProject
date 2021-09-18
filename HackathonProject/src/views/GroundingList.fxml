@@ -7,20 +7,19 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="center-pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GroundingListController">
-	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="Grounding 1">
+	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="5-4-3-2-1">
            <toggleGroup>
               <ToggleGroup fx:id="grounding" />
            </toggleGroup>
 		</RadioButton>
-		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Grounding 2" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Grounding 3" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Grounding 4" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="214.0" mnemonicParsing="false" styleClass="rbtn" text="Grounding 5" toggleGroup="$grounding" />
-		<RadioButton layoutX="466.0" layoutY="245.0" mnemonicParsing="false" styleClass="rbtn" text="Grounding 6" toggleGroup="$grounding" />
+		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Categories" toggleGroup="$grounding" />
+		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Awereness" toggleGroup="$grounding" />
+		<RadioButton layoutX="466.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Mental Health" toggleGroup="$grounding" />
+		
 		<Button fx:id="groundingSelection" layoutX="460.0" layoutY="300.0" mnemonicParsing="false" onAction="#startGrounding" prefHeight="51.0" prefWidth="167.0" styleClass="btn" text="GO">
             <font>
                <Font size="24.0" />
             </font>
-         </Button>
+        </Button>
    <Button layoutX="20.0" layoutY="550.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" styleClass="btn-back" onAction="#goBack" text="Go Back" />
 </AnchorPane>

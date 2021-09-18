@@ -22,7 +22,8 @@ BorderPane {
 	-fx-text-fill: blue;
 }
 
-.rbtn {
+.rbtn,
+Hyperlink {
 	-fx-font-size: 18px;
 	-fx-text-fill: #fff;
 }
@@ -30,4 +31,8 @@ BorderPane {
 .btn-back {
 	-fx-background-color: #6866f2;
 	-fx-font-size: 15px;
+}
+
+.navbar {
+	-fx-background-color: #6866f2;
 }
