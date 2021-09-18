@@ -24,7 +24,7 @@ public class MusicController {
 			root.setCenter(center);
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
-			primaryStage.setTitle("Grounding");
+			primaryStage.setTitle("Grounded");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(IOException e) {
