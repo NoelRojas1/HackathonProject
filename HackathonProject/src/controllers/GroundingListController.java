@@ -90,16 +90,34 @@ public class GroundingListController {
 
     @FXML
     void btnNext(ActionEvent event) {
-//    	String title = "";
-//    	if(title.contains("Categories")) {
-//         	txt.setText(categories(randomNumberZeroToEleven()));
-//     	}
-//         else if(title.contains("Awareness")) {
-//         	txt.setText(awareness(randomNumberZeroToSeven()));
-//     	}
-//         else if(title.contains("Mental Exercise")) {
-//         	txt.setText(mentalExercises(randomNumberZeroToSeven()));
-//     	}
+    	try {
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../views/Main.fxml"));
+            //Load the view for the type of options chosen
+            AnchorPane center = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/categoriesTechnique.fxml"));
+            //Set the center of the border pane depending on the type of options chosen
+            root.setCenter(center);
+            Scene scene = new Scene(root);
+
+            scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            String title = primaryStage.getTitle();
+            ObservableList <Node> children = center.getChildren();
+            TextArea txt = (TextArea) children.get(0);
+            if(title.contains("Categories")) {
+             	txt.setText(categories(randomNumberZeroToEleven()));
+         	}
+             else if(title.contains("Awareness")) {
+             	txt.setText(awareness(randomNumberZeroToSeven()));
+         	}
+             else if(title.contains("Mental Exercise")) {
+             	txt.setText(mentalExercises(randomNumberZeroToSeven()));
+         	}
+        } catch(IOException e) {
+            System.out.println(e.toString());
+        }
     }
     
     void changeScreen(ActionEvent event, String fxmlFile, String title) {
