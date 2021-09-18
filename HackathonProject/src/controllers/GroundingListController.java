@@ -21,7 +21,8 @@ public class GroundingListController {
     public static void main(String [] args) {
     	//System.out.println(fiveToOne());
     	//System.out.println(categories(randomNumberZeroToEleven()));
-    	System.out.println(mentalExercises(randomNumberZeroToSeven()));
+    	//System.out.println(mentalExercises(randomNumberZeroToSeven()));
+    	//System.out.println(awareness(randomNumberZeroToSeven()));
     }
     
 	@FXML
@@ -111,18 +112,47 @@ public class GroundingListController {
 			case 3: exercise = "Pick up an object and describe it in detail. Describe its color, texture, size, weight, \r\n"
 					+ "scent, and any other qualities you notice.";
 				break;
-			case 4: exercise = "Spell your full name, and the names of three other people, backwards";
+			case 4: exercise = "Spell your full name, and the names of three other people, backwards.";
 				break;
-			case 5: exercise = "Name all your family members, their ages, and one of their favorite activities";
+			case 5: exercise = "Name all your family members, their ages, and one of their favorite activities.";
 				break;
-			case 6: exercise = "Read something backwards, letter-by-letter. Practice for at least a few minutes";
+			case 6: exercise = "Read something backwards, letter-by-letter. Practice for at least a few minutes.";
 				break;
 			case 7: exercise = "Think of an object and \"draw\" it in your mind, or in the air with your finger. Try drawing \r\n"
-					+ "your home, a vehicle, or an animal. ";
+					+ "your home, a vehicle, or an animal.";
 				break;
 		}
 		return exercise;
 	}
+	
+	private static String awareness(int num) {
+		String activity = "";
+		
+		switch(num) {
+			case 0: activity = "Take 5 long, deep breaths through your nose, and exhale through puckered lips.";
+				break;
+			case 1: activity = "Place both feet flat on the floor. Wiggle your toes. Curl and uncurl your toes several \r\n"
+					+ "times. Spend a moment noticing the sensations in your feet.";
+				break;
+			case 2: activity = "Stomp your feet on the ground several times. Pay attention to the sensations in your feet \r\n"
+					+ "and legs as you make contact with the ground.";
+				break;
+			case 3: activity = "Clench your hands into fists, then release the tension. Repeat this 10 times.";
+				break;
+			case 4: activity = "Press your palms together. Press them harder and hold this pose for 15 seconds. Pay \r\n"
+					+ "attention to the feeling of tension in your hands and arms.";
+				break;
+			case 5: activity = " Rub your palms together briskly. Notice and sound and the feeling of warmth.";
+				break;
+			case 6: activity = "Reach your hands over your head like you’re trying to reach the sky. Stretch like this for 5 \r\n"
+					+ "seconds. Bring your arms down and let them relax at your sides.";
+				break;
+			case 7: activity = "Take 5 more deep breaths and notice the feeling of calm in your body.";
+				break;
+		}
+		return activity;
+	}
+	
 	
 	//Helper method(s)
 	private static int randomNumberZeroToEleven() {
