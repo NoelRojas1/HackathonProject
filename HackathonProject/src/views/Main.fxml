@@ -23,24 +23,24 @@
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-pane" BorderPane.alignment="CENTER">
-      	<RadioButton layoutX="466.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="Grounding">
+      	<RadioButton layoutX="600.0" layoutY="91.0" mnemonicParsing="false" selected="true" styleClass="rbtn" text="Grounding">
            <toggleGroup>
               <ToggleGroup fx:id="options" />
            </toggleGroup>
 		</RadioButton>
-		<RadioButton layoutX="466.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Articles" toggleGroup="$options" />
-		<RadioButton layoutX="466.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Breathing" toggleGroup="$options" />
-		<RadioButton layoutX="466.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Music" toggleGroup="$options" />
-		<RadioButton layoutX="466.0" layoutY="214.0" mnemonicParsing="false" styleClass="rbtn" text="Option 5" toggleGroup="$options" />
-		<RadioButton layoutX="466.0" layoutY="245.0" mnemonicParsing="false" styleClass="rbtn" text="Option 6" toggleGroup="$options" />
-         <Button fx:id="btnStart" layoutX="445.0" layoutY="300.0" mnemonicParsing="false" onAction="#startProgram" prefHeight="51.0" prefWidth="167.0" styleClass="btn" text="START">
+		<RadioButton layoutX="600.0" layoutY="122.0" mnemonicParsing="false" styleClass="rbtn" text="Articles" toggleGroup="$options" />
+		<RadioButton layoutX="600.0" layoutY="154.0" mnemonicParsing="false" styleClass="rbtn" text="Breathing" toggleGroup="$options" />
+		<RadioButton layoutX="600.0" layoutY="184.0" mnemonicParsing="false" styleClass="rbtn" text="Music" toggleGroup="$options" />
+		<RadioButton layoutX="600.0" layoutY="214.0" mnemonicParsing="false" styleClass="rbtn" text="Option 5" toggleGroup="$options" />
+		<RadioButton layoutX="600.0" layoutY="245.0" mnemonicParsing="false" styleClass="rbtn" text="Option 6" toggleGroup="$options" />
+         <Button fx:id="btnStart" layoutX="445.0" layoutY="230.0" mnemonicParsing="false" onAction="#startProgram" styleClass="btn" text="START">
             <font>
-               <Font size="24.0" />
+               <Font size="14.0" />
             </font>
          </Button>
-         <Button fx:id="btnRandom" layoutX="445.0" layoutY="370.0" mnemonicParsing="false" onAction="#startProgramRandom" prefHeight="51.0" prefWidth="167.0" styleClass="btn" text="RANDOM">
+         <Button fx:id="btnRandom" layoutX="445.0" layoutY="275.0" mnemonicParsing="false" onAction="#startProgramRandom" styleClass="btn" text="RANDOM">
             <font>
-               <Font size="24.0" />
+               <Font size="14.0" />
             </font>
          </Button>
       </AnchorPane>
