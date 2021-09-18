@@ -57,6 +57,7 @@ Hyperlink {
 	-fx-border-radius: 10px 20px;
 	-fx-font-size: 14px;
 	-fx-font-weight: bold;
+	-fx-underline: false;
 }
 
 Hyperlink:hover {
