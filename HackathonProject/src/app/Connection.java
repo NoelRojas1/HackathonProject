@@ -53,10 +53,11 @@ public abstract class Connection {
 				//Accept the connection is it's server, else instantiate the client
 				//The method blocks execution until connection is made
 				 Socket socket = isServer() ? server.accept() : new Socket(getIP(), getPort());
-				//Send objects / data
-				 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
 				//Receive objects / data
-				 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
+				ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+				//Send objects / data
+				 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());) 
+			{
 				
 				this.socket = socket;
 				this.out = out;
