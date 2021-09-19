@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -19,17 +20,19 @@ public class LiveChat extends Application implements Runnable {
 	private TextField input = new TextField();
 	
 	private Parent createContent() throws Exception {
+		BorderPane root = new BorderPane();
 		messages.setPrefHeight(370);
 		messages.setEditable(false);
-//		TextField input = new TextField();
 		input.setPrefSize(270, 25);
 		Button send = new Button("Send");
+		send.getStyleClass().add("btn");
 		send.setPrefSize(100, 25);
 		HBox hbox = new HBox(input, send);
 		hbox.setSpacing(10);
-		VBox root = new VBox(10, messages, hbox);
+		VBox vbox = new VBox(10, messages, hbox);
 		VBox.setMargin(hbox, new Insets(10));
 		VBox.setMargin(messages, new Insets(10));
+		root.setCenter(vbox);
 		root.setPrefSize(400, 400);
 		
 		send.setOnAction(event -> {
@@ -40,9 +43,10 @@ public class LiveChat extends Application implements Runnable {
 			
 			try {
 				connection.send(message);
+				System.out.println(connection.getIP() + " " + connection.getPort());
 			} catch (Exception e) {
 				messages.appendText("Failed to send.\n");
-				System.out.println(e);
+				System.out.println(e.getCause());
 			}
 		});
 		
@@ -58,7 +62,10 @@ public class LiveChat extends Application implements Runnable {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setScene(new Scene(createContent()));
+		Parent content = createContent();
+		Scene scene = new Scene(content);
+		scene.getStylesheets().add(getClass().getResource("../assets/styleSheets/application.css").toExternalForm());
+		primaryStage.setScene(scene);
 		primaryStage.setTitle("Chat with a Doctor");
 		primaryStage.show();
 	}
